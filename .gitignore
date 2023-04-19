@@ -1,0 +1,20 @@
+#
+# Build products
+#
+*.o
+*.ko
+*.cmd
+Module.symvers
+format_disk_as_pantryfs
+modules.order
+*.mod
+*.mod.c
+.tmp_versions
+*.tgz
+*.gz
+
+#
+# Common editor swap files
+#
+.*.swp
+*~
