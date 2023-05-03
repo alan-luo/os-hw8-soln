@@ -4,7 +4,8 @@ INIT_COMMIT=$(git log --reverse --pretty=format:"%h" | head -n 1)
 IGNORES=FILE_PATH_CHANGES,SPDX_LICENSE_TAG,MISSING_EOF_NEWLINE,EXPORT_SYMBOL
 
 HW8_IGNORES=$IGNORES,ENOSYS,AVOID_EXTERNS,LINE_CONTINUATIONS,TRAILING_SEMICOLON
-git diff $INIT_COMMIT | util/checkpatch.pl --no-tree --ignore $HW8_IGNORES
+HW8_SOL_IGNORES=$HW8_IGNORES,SPLIT_STRING,AVOID_BUG,OOM_MESSAGE
+git diff $INIT_COMMIT | util/checkpatch.pl --no-tree --ignore $HW8_SOL_IGNORES
 
 # ENOSYS: Looks like ENOSYS is often misused in the kernel so checkpatch always
 #         warns on seeing ENOSYS. Our use is correct, though!

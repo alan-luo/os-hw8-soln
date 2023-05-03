@@ -1,4 +1,4 @@
-obj-m += mypantry.o
+obj-m += pantry.o
 
 all: kmod format_disk_as_pantryfs
 
